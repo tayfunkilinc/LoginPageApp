@@ -36,6 +36,8 @@ public class LoginPageApp {
     //1.adim
     private static void start(){
         Scanner scanner = new Scanner(System.in);
+
+        UserService userService = new UserService();
         int select; // CIKIS icin 0 secilsin
 
         //menu
@@ -49,9 +51,9 @@ public class LoginPageApp {
 
             switch (select){
                 case 1 -> // uye olam islemi
-                        System.out.println(); // bunu sonra sil
+                       userService.register();
                 case 2 -> // giris yapma islemleri
-                        System.out.println(); //bunu sonra sil
+                        userService.login();
                 case 0 -> System.out.println("Iyi gunler dileriz"); //asagida uygulama direk durdurulacakti donguden cikilacaktir
                 default -> System.out.println("HATALI Giris Lutfen 0 - 1 - 2 Degerlerinden Birini Giriniz");
             }
